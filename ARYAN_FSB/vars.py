@@ -28,12 +28,7 @@ class Var(object):
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', 'compatible-rosina-javamindful-de9b5623.koyeb.app') if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-    HAS_SSL=bool(getenv('HAS_SSL', True))
-    if HAS_SSL:
-        URL = "https://{}/".format(FQDN)
-    else:
-        URL = "http://{}/".format(FQDN)
+    FQDN = str(getenv('FQDN', 'https://compatible-rosina-javamindful-de9b5623.koyeb.app')
     DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://javamindful:javamindful@cluster0.zeupx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', '-1002182339442'))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))
