@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AryaN | RavenCodes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            endcol: '#A6A3CC',
+            startpink: '#EAB7E5'
+          }
+        }
+      }
+    }
+  </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-gray-900 p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-colors.endcol to-colors.startpink">
+                AryaN Streamlink
+            </a>
+            <div>
+                <button id="ChannelBtn" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 focus:outline-none">Channel</button>
+                <button id="aboutBtn" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 focus:outline-none">About</button>
+                </div>
+        </nav>
+    </header>
+    
+    <div id="drawer" class="fixed top-0 right-0 w-64 h-full bg-gray-900 shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6 text-white">
+            <button id="closeDrawer" class="text-gray-400 hover:text-gray-200 font-bold text-2xl float-right">×</button>
+            <h2 class="text-xl font-bold mb-4">About Me</h2>
+            <p class="text-gray-400">
+                Hello User! We provide easy access to a wide range of video content via streaming and downloading links. My focus is to make streaming simple and user-friendly. Enjoy your experience with us!
+            </p>
+        </div>
+    </div>
+    
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-gray-800 rounded-lg overflow-hidden mb-6">
+                <video id="player" class="player w-full" playsinline controls>
+                    <source src="{{file_url}}" type="video/mp4">
+                </video>
+            </div>
+
+            <h2 id="file-name" class="text-2xl font-bold mb-4 wow animate__animated animate__fadeInRight">
+                {{file_name}}
+            </h2>
+
+            
+
+            <button onclick="direct_btn()" class="w-full bg-gradient-to-r from-endcol to-startpink hover:from-pink-600 hover:to-violet-600 text-white font-bold py-3 px-4 rounded-full mb-6 wow animate__animated animate__rubberBand">
+                Download Directly
+            </button>
+
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-4">Visit Our Bots List For More Info</h3>
+                <p class="text-gray-400">
+                    Welcome to our online streaming platform! Our website provides convenient streaming links for various files using Telegram bots. Please note that we are not responsible for the content. Users are encouraged to respect copyright laws and adhere to our community guidelines. Enjoy easy, hassle-free file streaming.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-center py-4">
+        <p class="text-sm">
+            © <script>document.write(new Date().getFullYear())</script> Copyright:
+            <a href="https://telegram.me/Master_Jiraya" class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 font-bold">
+                Aryan Sharma
+            </a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+    <script SRC="https://aryansharma-exe.github.io/resources/script-stb.js"></script>
+</body>
+</html>
