@@ -42,7 +42,7 @@ async def private_receive_handler(c: Client, m: Message):
         await log_msg.reply_text(text=f"**RᴇQᴜᴇꜱᴛᴇᴅ ʙʏ :** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n**Uꜱᴇʀ ɪᴅ :** `{m.from_user.id}`\n**Stream ʟɪɴᴋ :** {stream_link}", disable_web_page_preview=True,  quote=True)
         await m.reply_text(
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link2),
-            msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link2)
+            msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link2),
             quote=True,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🖥 sᴛʀᴇᴀᴍ 🖥", url=stream_link), #Stream Link
